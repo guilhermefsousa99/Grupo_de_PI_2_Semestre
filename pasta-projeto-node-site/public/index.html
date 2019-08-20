@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brandão</title>
+</head>
+<style>
+    body {
+        background-image: url(http://i.imgur.com/oRokM.jpg);
+        background-position: 1366px 78px;
+    }
+
+    .container {
+        max-width: 100%;
+        background: rgb(182, 174, 174);
+        margin: 0 auto;
+        position: top;
+        padding-bottom: 20px;
+        min-height: 50px;
+    }
+
+    .formulario {
+        max-width: 500px;
+        margin: 0 auto;
+        position: center;
+        padding-bottom: 20px;
+        min-height: 300px;
+    }
+    .botao2 {
+    margin-left: 0px;
+    }
+    .botao1:hover{
+    color:blue;
+    background-color: gray;
+    }
+    .botao2:hover{
+    color:blue;
+    background-color: gray;
+
+    }
+</style>
+
+<body>
+    <div class="container"></div>
+    <div class="formulario">
+        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+ <h2 style="color:azure; border:4px">Se Cadastre Agora</h2>
+ <h3 style="color:azure; border:4px">Informe seu nome:</h3><input type="text" id="nm" name="nome" autofocus><br>
+ <h3 style="color:azure; border:4px">Digite seu E-mail:</h3><input type="text" id="lgim" name="login"><br>
+ <h3 style="color:azure; border:4px">Digite sua Senha:</h3><input type="password" id="snha" name="senha">
+ <h3 style="color:azure; border:4px">Digite seu RG:</h3><input type="text" id="gr" name="rg"><br>
+<h3 style="color:azure; border:4px">Digite sua Telefone:</h3><input type="text" id="fone" name="telefone">
+            <br><br>
+            <button  class="botao1" id="btn_entrar">Cadastrar</button> 
+
+            <button class="botao2" type="button" onclick="irlogin()">Login</button>
+ 
+        </form>
+    </div>
+  
+    <img src="aguarde2.gif" id="img_aguarde" style="display: none;width:99px">
+
+    <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+        Erro no cadastro
+    </div>
+</body>
+
+</html>
+<script>
+
+    function cadastrar() {
+        
+        validar1();
+        
+        aguardar();
+        
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            aguardar();
+            if (response.ok) {
+
+                window.location.href='login.html';
+
+            } else {
+                
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+                
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display='block';
+        div_erro.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display='none';
+        div_erro.style.display='block';
+    }
+
+    function irlogin(){
+        window.location.href='login.html';
+    }
+
+    function validar1(){
+        if(nm.value==0||lgim.value==0||snha.value==0||gr.value==0|| fone==0){
+                    alert("Preencha os Campos!");
+                    
+                }
+                
+    }
+
+</script>
