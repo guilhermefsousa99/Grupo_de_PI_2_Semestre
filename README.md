@@ -1,2 +1,2 @@
-# Grupo_de_PI_2_Semestre
+# Grupo de PI 2 Semestre - 2019-2
 Trabalho de PI
