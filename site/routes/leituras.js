@@ -98,6 +98,29 @@ router.get('/tempo-real', function (req, res, next) {
   });
 });
 
+// Teste
+/*
+router.get('/logar', (requisicao,resposta) => {
+  banco.conectar().then(
+    banco.sql.query('select * from teste', resultado => {
+      console.log(resultado);
+  })).then(
+  banco.sql.close()
+  )
+})
+*/
+
+router.get('/logar', (requisicao,resposta) => {
+banco.conectar().then(() => {
+    return banco.sql.query(`
+        select * from teste
+        `);
+  }).then(consulta => {
+    console.log(consulta);
+  }).finally(() => {
+    banco.sql.close();
+  });
+})
 
 // não mexa nesta linha!
 module.exports = router;
