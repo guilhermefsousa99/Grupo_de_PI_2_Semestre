@@ -2,8 +2,8 @@ verificarAutenticacao();
 
 function verificarAutenticacao() {
 	if (sessionStorage.usuario != undefined) {
-  		window.location.href = './index.html';
-	}
+  		window.location.href = "./index.html";
+	} 
 }
 
 function entrar() {
