@@ -1,25 +1,4 @@
 
-
-
-FUNCIONAL
-
-1.1 O sistema deve permitir o usuario
-realizar operaçoes de consulta, inserção,
-atualização e agendamento de gmuds
-
-1.2 O sistema deve enviar alertas sobre o andamento 
-da GMUD p/ o usuario tanto na aplicação web quanto mobile.
-
-1.3 O sistema deve manter dados sobre entrada/saida/ supervisão de GMUDs
-junto com dashboards de provisão.
-
-_____________________________________________________________________________________________________________________________
-NÃO FUNCIONAL
-
-1.2 
-
-
-
 _____________________________________________________________________________________________________________________________
 
 funcional/funcionalidade são os oques do sistema tipo (tela de cadastro) 
@@ -27,6 +6,7 @@ funcional/funcionalidade são os oques do sistema tipo (tela de cadastro)
 
 
 _____________________________________________________________________________________________________________________________
+Nome do Projeto
 
 The changes Manager / GMUnDo / DUMG / 
 _____________________________________________________________________________________________________________________________
@@ -53,10 +33,20 @@ REQUISITOS USUARIO (porque)
     ..... Todos os stakeholders serão notificados no inicio / meio e fim de uma gmud.
     ..... Gerar relatório da gmud
     ..... Site responsivo
-    ..... 
+    ..... Site com design intuitivo
+    O sistema deve enviar alertas sobre o andamento da GMUD p/ o usuario na aplicação web
+	
 
         REQUISITOS DE SISTEMA  (como)
  
+1 - Montar modelo conceitual do banco de dados
+2 - Montar modelo lógico do banco de dados
+3 - Montar scripts de implentação para mysql mssql
+4 - Comunicação entre site e banco de dados
+5 - O sistema deve manter dados sobre entrada/saida/ supervisão de GMUDs junto com dashboards de provisão.
+6 - O sistema deve permitir o usuario realizar operaçoes de consulta, inserção, atualização e agendamento de gmuds
+
+
 
 
 _____________________________________________________________________________________________________________________________
