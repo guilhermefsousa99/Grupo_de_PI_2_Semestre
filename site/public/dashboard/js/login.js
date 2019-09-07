@@ -2,16 +2,15 @@ verificarAutenticacao();
 
 function verificarAutenticacao() {
 	if (sessionStorage.usuario != undefined) {
-  		window.location.href = '../index.html';
+  		window.location.href = './index.html';
 	}
 }
 
 function entrar() {
 var formulario = new URLSearchParams(new FormData(form_login));
-console.log("Chamou o fetch" + formulario);
-fetch('/logar', {
-  method: "POST",
-  body: formulario
+console.log("Chamou o fetch " + formulario);
+fetch('/usuarios/logar', {
+  method: "GET",
 }).then(function (response) {
   if (response.ok) {
 

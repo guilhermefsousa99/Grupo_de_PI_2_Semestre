@@ -4,21 +4,30 @@ var router = express.Router();
 var banco = require('../app-banco');
 // não mexa nessas 3 linhas!
 
-router.post('/logar', (requisicao,resposta) => {
+router.get('/logar', (requisicao,resposta) => {
   console.log("Chegou no end-point")
+  
 banco.conectar().then(() => {
-    console.log(JSON.stringify(requisicao.body))
     return banco.sql.query(`
-        select * from teste where login = ${requisicao.body.login} and senha = ${requisicao.body.senha}
+        select * from teste where login = 'Leo' and senha = 123
         `);
   }).then(consulta => {
-    if (consulta.recordset[0].length == 1) {
-        resposta.send(consulta);
+    console.log(consulta);
+    if (consulta.recordset.length == 1) {
+        resposta.send(consulta.recordset[0]);
     }
   }).finally(() => {
     banco.sql.close();
   });
+  
 })
+
+/*
+router.get("/teste",function (req,res) {
+  console.log("Chegou no end-point")
+  res.send();
+})
+*/
 
 
 // não mexa nesta linha!

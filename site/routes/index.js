@@ -14,6 +14,4 @@ router.get('/rx', function(req, res, next) {
   res.status(403).send({x:0, www:2, ehehe:3}); 
 });
 
-router.use("/",require("./usuarios.js"));
-
 module.exports = router;
