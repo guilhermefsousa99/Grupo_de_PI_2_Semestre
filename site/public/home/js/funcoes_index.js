@@ -2,14 +2,12 @@ logged_not_logged();
 
 function logged_not_logged() {
 	if (sessionStorage.usuario != undefined) {
-		navbarlegal.innerHTML = `
-			<li class="active"><a href="#main-header">Home</a></li>
-	        <li class=""><a href="#feature">About</a></li>
-	        <li class=""><a href="#service">Services</a></li>
-	        <li class=""><a href="#portfolio">Portfolio</a></li>
-	        <li class=""><a href="#testimonial">Testimonial</a></li>
-	        <li class=""><a href="#blog">Blog</a></li>
-	        <li class=""><a href="#contact">Contact Us</a></li>
+		myNavbar.innerHTML = `
+			<ul id="navbarlegal" class="nav navbar-nav navbar-right">
+			<li class="active"><a href="#main-header">Início</a></li>
+	        <li class=""><a href="#feature">Sobre Nós</a></li>
+	        <li class=""><a href="#service">Nosso Serviço</a></li>
+	        <li class=""><a href="#contact">Contato</a></li>
 	        <li class="dropdown">
 	            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 	                <span class="">${sessionStorage.usuario}</span>
@@ -25,6 +23,7 @@ function logged_not_logged() {
 	              </li>
 	            </ul>
           </li>
+          </ul>
 		`
 	}
 }
