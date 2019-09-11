@@ -5,3 +5,6 @@ function logout() {
   window.location.href = "./login.html"
 }
 
+function zerar_notif() {
+	qtd_notif.innerHTML = "fd"
+}
