@@ -6,5 +6,5 @@ function logout() {
 }
 
 function zerar_notif() {
-	qtd_notif.innerHTML = "fd"
+	qtd_notif.style.display = `none`
 }
