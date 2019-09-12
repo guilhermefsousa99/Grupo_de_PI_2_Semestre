@@ -10,7 +10,8 @@ function entrar() {
 var formulario = new URLSearchParams(new FormData(form_login));
 console.log("Chamou o fetch " + formulario);
 fetch('/usuarios/logar', {
-  method: "GET",
+  method: "POST",
+  body: formulario
 }).then(function (response) {
   if (response.ok) {
 

@@ -4,12 +4,12 @@ var router = express.Router();
 var banco = require('../app-banco');
 // não mexa nessas 3 linhas!
 
-router.get('/logar', (requisicao,resposta) => {
+router.post('/logar', (requisicao,resposta) => {
   console.log("Chegou no end-point")
-  
+  console.log(requisicao.body)
 banco.conectar().then(() => {
     return banco.sql.query(`
-        select * from teste where login = 'Leo' and senha = 123
+        select * from teste where login = '${requisicao.body.login}' and senha = ${requisicao.body.senha}
         `);
   }).then(consulta => {
     console.log(consulta);
