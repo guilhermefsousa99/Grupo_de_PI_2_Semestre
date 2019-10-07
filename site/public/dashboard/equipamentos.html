@@ -34,7 +34,6 @@
   <link href="css/style-responsive.css" rel="stylesheet" />
   <link href="css/xcharts.min.css" rel=" stylesheet">
   <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
-  <link href="css/cores_base.css" rel="stylesheet">
   <!-- =======================================================
     Theme Name: NiceAdmin
     Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -53,7 +52,7 @@
       </div>
 
       <!--logo start-->
-      <a href="../index.html" class="logo" style="color:white"><b>TCM</b> </a>
+      <a href="../index.html" class="logo">TCM </a>
       <!--logo end-->
 
       
@@ -72,7 +71,7 @@
           <li id="alert_notificatoin_bar" class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
-                            <i class="fa fa-bell" style="color:white" onclick="zerar_notif()"></i>
+                            <i class="icon-bell-l" onclick="zerar_notif()"></i>
                             <span id="qtd_notif" class="badge bg-important" >1</span>
                         </a>
             <ul class="dropdown-menu extended notification">
@@ -103,7 +102,7 @@
                             <span class="username" id="username"></span>
                             <b class="caret"></b>
                         </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu extended logout">
               <div class="log-arrow-up"></div>
               <li class="eborder-top">
                 <a href="#"><i class="icon_profile"></i> Meu Perfil </a>
@@ -125,36 +124,36 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
-          <li class="">
-            <a id="d" class="" href="index.html">
+          <li class="active">
+            <a class="" href="index.html">
                           <i class="icon_house_alt"></i>
-                          <span><b>Dashboard</b></span>
+                          <span>Dashboard</span>
                       </a>
           </li>
 
           <li class="sub-menu">
-            <a id="e" href="javascript:;" class="">
+            <a href="javascript:;" class="">
                           <i class="icon_desktop"></i>
-                          <span><b>Estrutura</b></span>
+                          <span>Estrutura</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                           
                       </a>
             <ul class="sub">
-              <li><a id="a" class="" href="areas.html"><b>Áreas</b></a></li>
-              <li><a id="f" class="" href="funcionarios.html"><b>Funcionários</b></a></li>
-              <li><a id="q" class="" href="equipamentos.html"><b>Equipamentos</b></a></li>
+              <li><a class="" href="areas.html">Áreas</a></li>
+              <li><a class="" href="funcionarios.html">Funcionários</a></li>
+              <li><a class="" href="equipamentos.html">Equipamentos</a></li>
             </ul>
           </li>
 
           <li class="sub-menu">
-            <a id="g" href="javascript:;" class="">
+            <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
-                          <span><b>GMUD</b></span>
+                          <span>GMUD</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a id="ag" class="" href="agendadas.html"><b>Agendadas</b></a></li>
-              <li><a id="r" class="" href="relatorios.html"><b>Relatórios</b></a></li>
+              <li><a class="" href="agendadas.html">Agendadas</a></li>
+              <li><a class="" href="relatorios.html">Relatórios</a></li>
             </ul>
           </li>
         </ul>
@@ -166,7 +165,13 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        
+        <!--overview start-->
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>         
+          </div>
+        </div>  
+        <!-- Today status end -->
 
       <div class="text-right">
         <div class="credits">
