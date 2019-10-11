@@ -1,0 +1,63 @@
+tr {
+	color:black !important ;
+}
+
+#titulo {
+	text-align: center;
+	color: black;
+}
+
+#caixa {
+	border-style: solid;
+	border-color: black;
+}
+
+#consulta {
+	font-size: 25px;
+	color:black;
+	border-bottom: solid;
+	border-color: black;
+
+}
+
+#p_inicio , #p_fim {
+	margin: 5px;
+}
+
+#btn_consultar {
+	margin-left: 440px;
+}
+
+table, th, tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 20px;
+  padding: 5px;
+}
+
+#motivo {
+	padding: 0 280px 0 280px;
+	color: black;
+}
+
+#categoria {
+	padding: 0 50px 0 50px;
+	color: black;
+}
+
+#data {
+	padding: 0 45px 0 45px;
+	color: black;
+}
+
+#detalhes {
+	padding: 0 12px 0 12px;
+	color: black;
+}
+
+#id {
+	text-align: center;
+	color: black;
+}
+
+

@@ -22,6 +22,7 @@
   <!-- Custom styles -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet" />
+  <link href="css/login.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
   <!--[if lt IE 9]>
@@ -37,42 +38,25 @@
     ======================================================= -->
 </head>
 
-<body class="login-img3-body">
+<body>
 
-  <div class="container">
+  <div class="box" id="formulario">
 
     <form class="login-form" id="form_login" onsubmit="return entrar()" method="POST">
-      <div class="login-wrap">
-        <p class="login-img"><i class="icon_lock_alt"></i></p>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="icon_profile"></i></span>
-          <input type="text" class="form-control" name="login" placeholder="Usuário" autofocus>
-        </div>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-          <input type="password" class="form-control" name="senha" placeholder="Senha">
-        </div>
-        <label class="checkbox">
-                
-                <span class="pull-right"> <a href="#"> Esqueci minha senha</a></span>
-            </label>
-        <button class="btn btn-primary btn-lg btn-block">Login</button>
-        <a class="btn btn-info btn-lg btn-block" type="button" href="../index.html">Home Page</a>
-      </div>
-    </form>
-    <div class="text-right">
-      <div class="credits">
-          <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-          -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-    </div>
-  </div>
+    
+      <input type="text" name="login" placeholder="Usuário" autofocus>
 
+      <input type="password" name="senha" placeholder="Senha">
+      <br>
+
+      <button>Login</button>
+      <br>
+
+      <a href="../index.html">Home Page</a>
+
+    </form>
+
+  </div>
 
 </body>
 
