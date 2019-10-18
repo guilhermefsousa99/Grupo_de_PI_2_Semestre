@@ -22,6 +22,8 @@ banco.conectar().then(() => {
   
 })
 
+
+
 /*
 router.get("/teste",function (req,res) {
   console.log("Chegou no end-point")

@@ -168,26 +168,32 @@
     <section id="main-content">
       <section class="wrapper">
         
-        <div id="titulo">
+        <div id="div_titulo">
 
           <h1> Relatório de Mudanças </h1>
 
         </div>
         <br>
 
-        <div id="caixa">
+        <div class="row" id="div_caixa">
 
-          <div id="consulta">
+          <div class="row" id="div_linha_inicial">
 
-            Período:  <input id="p_inicio" type="date"> - <input id="p_fim" type="date">
+            <div class="col-md-6" id="div_consulta">
 
-            
-            <button id="btn_consultar">Consultar</button>
+              Período:  <input id="p_inicio" type="date"> - <input id="p_fim" type="date">
+              
+            </div>
 
+            <div class="col-md-6" id="div_botao">
+              
+              <button id="btn_consultar" onclick="relatorio(p_inicio,p_fim)">Consultar</button>
+
+            </div>
 
           </div>
 
-          <table>
+          <table id="tabela" class="table">
 
             <tr>
 
@@ -198,6 +204,8 @@
               <th id="detalhes"> + </th>
 
             </tr>
+
+
 
           </table>
 
@@ -263,6 +271,7 @@
     <script src="js/jquery.slimscroll.min.js"></script>
     <script src="home/js/funcoes_index.js"></script>
     <script src="js/funcoes_dashboard.js"></script>
+    <script src="js/relatorios.js"></script>
     <script>
       //knob
       $(function() {
