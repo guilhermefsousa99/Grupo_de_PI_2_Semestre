@@ -18,6 +18,18 @@ function relatorio(dtInicio,dtFim) {
 
     	response.json().then(function (resposta) {
 
+    		tabela.innerHTML = `
+    		<tr>
+
+              <th id="id"> ID GMUD </th>
+              <th id="motivo"> Motivo </th>
+              <th id="categoria"> Categoria </th>
+              <th id="data"> Data </th>
+              <th id="detalhes"> + </th>
+
+            </tr>
+    		`
+
     		for (c = 0;c < resposta.length;c++) {
     			tabela.innerHTML += `
     			<tr>

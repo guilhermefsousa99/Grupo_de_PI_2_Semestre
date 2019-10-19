@@ -8,7 +8,7 @@ router.post("/relatorios", (requisicao,resposta) => {
 	console.log(requisicao.body);
 	banco.conectar().then(() => {
     return banco.sql.query(`
-        select * from testerelatorio where data >= '${requisicao.body.dtInicio}' and data <= '${requisicao.body.dtFim}'
+        select FORMAT(data,'dd/MM/yyyy') as data,idgmud,motivo,categoria from testerelatorio where data >= '${requisicao.body.dtInicio}' and data <= '${requisicao.body.dtFim}' order by convert(datetime, data, 103)
 	        `);
 		}).then(consulta => {
 	    	console.log(consulta);
