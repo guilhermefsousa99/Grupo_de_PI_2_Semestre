@@ -44,7 +44,7 @@
   ======================================================= -->
 </head>
 
-<body>
+<body onload="verifi_date()">
   <!-- container section start -->
   <section id="container" class="">
 
@@ -190,20 +190,20 @@
               <div id="div_combo_mes" class="col-md-6">
 
                 Mês: 
-                <select>
+                <select id="combo_mes">
 
-                  <option> Janeiro </option>
-                  <option> Fevereiro </option>
-                  <option> Março </option>
-                  <option> Abril </option>
-                  <option> Maio </option>
-                  <option> Junho </option>
-                  <option> Julho </option>
-                  <option> Agosto </option>
-                  <option> Setembro </option>
-                  <option> Outubro </option>
-                  <option> Novembro </option>
-                  <option> Dezembro </option>
+                  <option value="0"> Janeiro </option>
+                  <option value="1"> Fevereiro </option>
+                  <option value="2"> Março </option>
+                  <option value="3"> Abril </option>
+                  <option value="4"> Maio </option>
+                  <option value="5"> Junho </option>
+                  <option value="6"> Julho </option>
+                  <option value="7"> Agosto </option>
+                  <option value="8"> Setembro </option>
+                  <option value="9"> Outubro </option>
+                  <option value="10"> Novembro </option>
+                  <option value="11"> Dezembro </option>
 
                 </select>
 
@@ -216,10 +216,10 @@
               <div id="div_combo_ano" class="col-md-6">
 
                 Ano: 
-                <select>
+                <select id="combo_ano">
 
-                  <option> 2019 </option>
-                  <option> 2020 </option>
+                  <option value="2019"> 2019 </option>
+                  <option value="2020"> 2020 </option>
 
                 </select>
 
@@ -239,35 +239,11 @@
 
             <table id="tbl_calendario" class="table">
 
-              <tr>
-
-                <td id="c1"> </td> <td id="c2"> </td> <td id="c3"> </td> <td id="c4"> </td> <td id="c5"> </td> <td id="c6"> </td> <td id="c7"> </td>
-
-              </tr>
-
-              <tr>
-
-                <td id="c8"> </td> <td id="c9"> </td> <td id="c10"> </td> <td id="c11"> </td> <td id="c12"> </td> <td id="c13"> </td> <td id="c14"> </td>
-
-              </tr>
-
-              <tr>
-
-                <td id="c15"> </td> <td id="c16"> </td> <td id="c17"> </td> <td id="c18"> </td> <td id="c19"> </td> <td id="c20"> </td> <td id="c21"> </td>
-
-              </tr>
-
-              <tr>
-
-                <td id="c22"> </td> <td id="c23"> </td> <td id="c24"> </td> <td id="c25"> </td> <td id="c26"> </td> <td id="c27"> </td> <td id="c28"> </td>
-
-              </tr>
-
-              <tr style="border-style: none">
-
-                <td id="c29"> </td> <td id="c30"> </td> <td id="c31"> </td> <td id="c32"> </td> <td id="c33"> </td> <td id="c34"> </td> <td id="c35"> </td>
-
-              </tr>
+              <tr id="l1"> </tr>
+              <tr id="l2"> </tr>
+              <tr id="l3"> </tr>
+              <tr id="l4"> </tr>
+              <tr id="l5"> </tr>
 
             </table>    
 
@@ -334,6 +310,7 @@
     <script src="js/jquery.slimscroll.min.js"></script>
     <script src="home/js/funcoes_index.js"></script>
     <script src="js/funcoes_dashboard.js"></script>
+    <script src="js/agendadas.js"></script>
     <script>
       //knob
       $(function() {

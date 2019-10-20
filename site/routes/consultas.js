@@ -19,4 +19,20 @@ router.post("/relatorios", (requisicao,resposta) => {
   
 })
 
+// Consulta de Agendadas Com Base no Mês e Dia Atual
+router.post("/agendadas", (requisicao,resposta) => {
+	console.log("Chegou no end-p");
+	console.log(requisicao.body);
+	banco.conectar().then(() => {
+		return banco.sql.query(`
+			select FORMAT(data,'dd') as date from testerelatorio where DAY(data) >= ${requisicao.body.dia} and MONTH(data) >= ${requisicao.body.mes}
+			`);
+	}).then(consulta => {
+		console.log(consulta);
+		resposta.send(consulta.recordset);
+	}).finally(() => {
+		banco.sql.close();
+	});
+})
+
 module.exports = router;

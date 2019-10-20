@@ -40,7 +40,6 @@ function relatorio(dtInicio,dtFim) {
     			</tr>
     			`
     		}
-	    	console.log(resposta[0]);
 
 	    });
 
