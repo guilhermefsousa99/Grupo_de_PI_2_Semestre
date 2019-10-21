@@ -190,7 +190,7 @@
               <div id="div_combo_mes" class="col-md-6">
 
                 Mês: 
-                <select id="combo_mes">
+                <select id="combo_mes" onchange="consultar({dia:1,mes:combo_mes.value*1+1})">
 
                   <option value="0"> Janeiro </option>
                   <option value="1"> Fevereiro </option>
@@ -219,7 +219,6 @@
                 <select id="combo_ano">
 
                   <option value="2019"> 2019 </option>
-                  <option value="2020"> 2020 </option>
 
                 </select>
 
