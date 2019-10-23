@@ -35,4 +35,20 @@ router.post("/agendadas", (requisicao,resposta) => {
 	});
 })
 
+// Consulta de Áreas
+router.post("/areas", (requisicao,resposta) => {
+	console.log("Chegou no end-pA");
+	console.log(requisicao.body);
+	banco.conectar().then(() => {
+		return banco.sql.query(`
+			select FORMAT(data,'dd') as date,idgmud as gmud,motivo from testerelatorio where DAY(data) >= ${requisicao.body.dia} and MONTH(data) = ${requisicao.body.mes}
+			`);
+	}).then(consulta => {
+		console.log(consulta);
+		resposta.send(consulta.recordset);
+	}).finally(() => {
+		banco.sql.close();
+	});
+})
+
 module.exports = router;
