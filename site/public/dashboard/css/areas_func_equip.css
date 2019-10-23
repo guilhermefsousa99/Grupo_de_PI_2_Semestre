@@ -21,6 +21,6 @@
 	font-size: 25px;
 }
 
-#btn_filtro , #btn_consultar {
+#btn_executar , #btn_consultar , #btn_inserir {
 	float: right;
 }

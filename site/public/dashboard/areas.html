@@ -195,11 +195,13 @@
                 
             </div>
 
-            <div class="col-md-6">
+            <div id="div_botoes" class="col-md-6">
 
-              <button type="button" class="btn btn-warning" id="btn_consultar">Consultar</button>
+              <button onclick="inserir_areas()" type="button" class="btn btn-success" id="btn_executar">Executar</button>
 
-              <button type="button" class="btn btn-light" id="btn_filtro">Filtros</button>
+              <button onclick="mudar_tipo_tela('i')" type="button" class="btn btn-warning" id="btn_inserir">Inserção</button>
+
+              <button onclick="mudar_tipo_tela('c')" type="button" class="btn btn-warning" id="btn_consultar">Consulta</button>
 
             </div>
 
@@ -211,6 +213,7 @@
 
               <th> IDArea </th>
               <th> NomeArea </th>
+              <th> NomeEmpressa </th>
 
             </tr>
 

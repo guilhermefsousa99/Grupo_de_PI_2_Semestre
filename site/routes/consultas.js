@@ -36,17 +36,40 @@ router.post("/agendadas", (requisicao,resposta) => {
 })
 
 // Consulta de Áreas
-router.post("/areas", (requisicao,resposta) => {
+router.post("/consultar_areas", (requisicao,resposta) => {
 	console.log("Chegou no end-pA");
 	console.log(requisicao.body);
 	banco.conectar().then(() => {
 		return banco.sql.query(`
-			select FORMAT(data,'dd') as date,idgmud as gmud,motivo from testerelatorio where DAY(data) >= ${requisicao.body.dia} and MONTH(data) = ${requisicao.body.mes}
-			`);
-	}).then(consulta => {
-		console.log(consulta);
-		resposta.send(consulta.recordset);
-	}).finally(() => {
+			select a.idareas,a.nomearea,e.nomeEmpresa
+			from areas a
+			join empresa e on e.idempresa = a.fkempresa
+			where e.nomeempresa = '${requisicao.body.empresa}' and a.nomearea = '${requisicao.body.area}'
+		`).then(function (consulta) {
+			resposta.send(consulta.recordset);
+		})
+	}).catch(err => {
+		console.log(err);
+	}).finally(() => { 
+		banco.sql.close();
+	});
+})
+
+// Inserir Áreas
+router.post("/inserir_areas", (requisicao,resposta) => {
+	console.log("Chegou no end-pA");
+	console.log(requisicao.body);
+	banco.conectar().then(() => {
+		return banco.sql.query(`
+			insert into areas values (${requisicao.body.area},'${requisicao.body.nome}',${requisicao.body.empresa})
+		`).then(function () {
+			resposta.sendStatus(201);
+		})
+	}).catch(err => {
+		console.log(err);
+		var erro = `Erro no cadastro: ${err}`;
+		resposta.status(500).send(erro);
+	}).finally(() => { 
 		banco.sql.close();
 	});
 })
